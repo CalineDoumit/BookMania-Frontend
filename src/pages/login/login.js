@@ -42,15 +42,15 @@ function LoginForm(props) {
             "username": username,
             "password": password,
         }
-        // qPost( "/restPost/SaveLogin/", data).then((res) => {
-        //     if (res.saved === "saved") {
-        //        alert('success');
-        //     } else {
-        //         alert('NOTT success');
-        //     }
-        // }).catch((err) => {
-        //     console.log(err);
-        // })
+        qPost( "/users/signup", data).then((res) => {
+            if (res.success) {
+                localStorage.setItem("username",username);
+                history.push('/homepage')
+            } else {
+            }
+        }).catch((err) => {
+            console.log(err);
+        })
         console.log("I LOGGED IN",data);
     }
 

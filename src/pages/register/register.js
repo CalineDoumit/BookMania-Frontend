@@ -44,10 +44,10 @@ function RegisterForm(props) {
             "password": password,
         }
         qPost( "/users/signup", data).then((res) => {
-            if (res.statusCode === 200) {
-               alert('success');
+            if (res.success) {
+               localStorage.setItem("username",username);
+               history.push('/homepage')
             } else {
-                alert('NOTT success');
             }
         }).catch(() => {
         })
