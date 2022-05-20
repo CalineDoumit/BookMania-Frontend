@@ -1,24 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {HashRouter, BrowserRouter,Redirect, Route, Switch} from "react-router-dom";
+
+const LoginForm = React.lazy(() => import("./pages/login/login"));
+const RegisterForm = React.lazy(() => import("./pages/register/register"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+          <Route path="/login"><LoginForm/></Route>
+          <Route path="/register"><RegisterForm/></Route>
+      </BrowserRouter>
   );
 }
 
