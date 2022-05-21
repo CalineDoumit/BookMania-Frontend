@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useState} from "react";
 import {useHistory} from "react-router-dom"
 import {qPost} from "../../utils/HTTPHelpers";
 import './register.css';
@@ -11,18 +11,7 @@ function RegisterForm(props) {
     const [password, setPassword] = useState();
 
 
-
-    // useEffect(() => {
-    //     checkAllInputs();
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [phoneNumber, firstName, lastName, agreeToTerms]);
-
     const history = useHistory();
-    const routeChange = (e) =>{
-        e.preventDefault();
-        let path = `/register`;
-        history.push(path);;
-    }
 
 
     function validateUsername(e) {
@@ -54,10 +43,10 @@ function RegisterForm(props) {
     }
 
     return (
-        <div>
-            <div className='container loginPage'>
-                <div className='loginHeader'>
-                    <h2>
+        <div className={'registerCompletePage'}>
+            <div className='container registerPage'>
+                <div className='registerHeader'>
+                    <h2 style={{'color':'#C02D1A'}}>
                         Welcome to BookMania
                     </h2>
                     <h5>
@@ -78,7 +67,7 @@ function RegisterForm(props) {
                             <label className={'d-block text-left'}>
                                 Password
                             </label>
-                            <input type="text" id="password" autoComplete="off"
+                            <input type="password" id="password" autoComplete="off"
                                    onBlur={validatePassword}
                             />
                         </div>

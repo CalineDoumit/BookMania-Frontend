@@ -26,12 +26,10 @@ function LoginForm(props) {
     function validateUsername(e) {
         e.preventDefault();
         setUsername(e.target.value);
-        console.log(e.target.value);
     }
     function validatePassword(e) {
         e.preventDefault();
         setPassword(e.target.value);
-        console.log(e.target.value);
 
     }
 
@@ -42,7 +40,7 @@ function LoginForm(props) {
             "username": username,
             "password": password,
         }
-        qPost( "/users/signup", data).then((res) => {
+        qPost( "/users/login", data).then((res) => {
             if (res.success) {
                 localStorage.setItem("username",username);
                 history.push('/homepage')
@@ -51,21 +49,21 @@ function LoginForm(props) {
         }).catch((err) => {
             console.log(err);
         })
-        console.log("I LOGGED IN",data);
     }
 
     return (
-        <div>
+        <div className={"loginCompletePage"}>
             <div className='container loginPage'>
+                <div className={'loginForm'}>
                 <div className='loginHeader'>
-                        <h2>
+                        <h2 style={{'color':'#C02D1A'}}>
                             Welcome to BookMania
                         </h2>
                         <h5>
                             Enter your details to sign in
                         </h5>
                         <h5>
-                            Don't have an account?<button onClick={routeChange}>Register</button>
+                            Don't have an account?<button onClick={routeChange} class={"registerButton"}>Register</button>
                         </h5>
                 </div>
                 <div className={'row'} >
@@ -82,7 +80,7 @@ function LoginForm(props) {
                                     <label className={'d-block text-left'}>
                                         Password
                                     </label>
-                                    <input type="text" id="password"  autoComplete="off"
+                                    <input type="password" id="password"  autoComplete="off"
                                            onBlur={validatePassword}
                                     />
                                 </div>
@@ -93,7 +91,7 @@ function LoginForm(props) {
                             </form>
                         </div>
                     </div>
-
+            </div>
         </div>
     );
 }
