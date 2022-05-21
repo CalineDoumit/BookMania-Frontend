@@ -1,0 +1,58 @@
+.header{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: rgb(192, 45, 26);
+    color: #fff;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    length:60%
+}
+
+h2,h5{
+    color:white;
+    font-size: 30px;
+}
+
+.logoutButton{
+    align-self: end;
+    border:none;
+    color: white;
+    background-color: rgb(192, 45, 26);
+}
+
+.addARatingButton{
+    background-color: white;
+    color:  rgb(192, 45, 26);
+    border: none;
+}
+
+h1{
+    color: rgb(192, 45, 26);
+}
+
+table{
+    width:60%;
+}
+
+ td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+ tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #9093b0;
+    color: white;
+}
